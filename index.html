@@ -1,99 +1,203 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-<script src="https://kit.fontawesome.com/a14ae32021.js" crossorigin="anonymous"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>This one is for my Varchhu</title>
-
-<style type="text/css">
-@font-face {
-	font-family: digit;
-	src: url('digital-7_mono.ttf') format("truetype");
-}
-</style>
-<link href="css/default.css" type="text/css" rel="stylesheet">
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/garden.js"></script>
-<script type="text/javascript" src="js/functions.js"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hey Babe</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #f8e1f4, #ffe4e1);
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      max-height: 300px; /* initial small */
+      overflow-y: hidden;
+      transition: max-height 1.5s ease;
+      position: relative;
+      z-index: 1;
+    }
+    .card.expanded {
+      max-height: 600px; /* grow to fit message + photo */
+      overflow-y: auto;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+    button {
+      background: #d6336c;
+      border: none;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    p {
+      color: #555;
+      line-height: 1.5;
+      opacity: 0;
+      margin-top: 1rem;
+      transition: opacity 1.5s ease;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin-top: 1rem;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+    }
+    #reaction {
+      display: none;
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
-
 <body>
-	
-<div id="mainDiv">
-	<div id="content">
-		<div id="code">
-			<span class="comments">// The ET-LAB Friday. </span><br />
-			Since that day a spark begun;<br />
-			<span class="comments">// Your face Your Voice Your Words.</span><br />
-			Your everything got imprinted in my heart;<br />
-			As the time went on;<br />
-			The Bond grew stronger and stronger;<br />
-			Journey from Infatuation to Love;<br />
-			We have traveled a long way together;<br />
-			There have been fights ;<br />
-			<span class="comments">// And I'm sure there will be more.</span><br />
-			But our Bond will always grow back Stronger;<br />
-			<br>
-			<br>
-			All I want to say is:<br />
-			Baby, I will love you forever;<br />
-			<br>
-			<br>
-			Now If you want to hug me you can touch the heart below<br />
-			<br>
-			<span id="heartspan">
-			<a href="image.jpg"><i class="fas fa-heart" id="icon"></i></a>
-			</span>
-		</div>
-		<div id="loveHeart">
-			<canvas id="garden"></canvas>
-			<div id="words">
-				<div id="messages">
-					वर्षा ऋतु FOREVER
-					<div id="elapseClock"></div>
-				</div>
-				<div id="loveu">
-					I LOVE YOU SO MUCH<br/>
-					<div class="signature">- RITVIK</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+  <audio id="bgmusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <div class="card" id="card">
+    <h1>Hey babe</h1>
+    <button onclick="doYouLoveMe()">Do you love me?</button>
+    <div id="reaction"></div>
+    <p id="message">
 
-<script type="text/javascript">
-var offsetX = $("#loveHeart").width() / 2;
-var offsetY = $("#loveHeart").height() / 2 - 55;
-var together = new Date();
-together.setFullYear(2016, 8, 5);
-together.setHours(16);
-together.setMinutes(30);
-together.setSeconds(0);
-together.setMilliseconds(0);
+안녕 윤수야,<br><br>
 
-if (!document.createElement('canvas').getContext) {
-	var msg = document.createElement("div");
-	msg.id = "errorMsg";
-	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
-	document.body.appendChild(msg);
-	$("#code").css("display", "none")
-	$("#copyright").css("position", "absolute");
-	$("#copyright").css("bottom", "10px");
-	document.execCommand("stop");
-} else {
-	setTimeout(function () {
-		startHeartAnimation();
-	}, 5000);
+우리가 연애를 시작한 지 엊그제 같은데, 벌써 곧 100일이란 시간을 함께 하게 되었네.<br><br>
+물론 같이 있던 시간은 이것보다 짧았지만, 그게 무색할 만큼 정말 너를 만나고 나서 많이 행복하고 즐거웠던 것 같아.<br><br>
+진부한 말일 수도 있지만 정말로 평범하던 일상이 너와 함께하면서부터는 하루하루가 기대되기 시작했어.<br><br>
+가끔 내가 말이나 문자를 다정하게 하지 않을 때도 있고, 첫 연애라서 아직 부족한 점이 많다는 것도 잘 알아. 
+근데 진짜로 노력 많이 하고 있어. 너도 모르게 너가 이렇게 날 긍정적으로 바꾸는 것도 너무 좋다고 생각해. <br><br>
+반면에 우리 윤수의 장점은 내가 전화할 때마다 하도 많이 말해서 생략할게 (예쁘고, 섹시큐티하고 …).<br><br>
+근데 내가 제일 좋아하는 부분은 너랑 있으면 진짜 너무 재미있고, 시간 가는 줄 모르겠고, 전화하는 것조차 너무 즐겁다는 거야.<br><br>
+그러다 보니까 너랑 같이 있지 않을 때는 네가 정말 보고 싶고, 뭐 하고 있는지 궁금하고, 네 생각이 계속 나.<br><br>
+요즘에 한국 와서 내가 평소보다 많이 뭐라고 해서 상처받고, 우리 안 맞는다고 생각했을 수도 있지.<br><br>
+하지만 내 생각에는 사랑이 깊어질수록 너와 오래 함께하고 싶기 때문에 맞춰가는 과정에서 자주 다툴 수밖에 없다고 생각해.<br><br>
+그러니까 내가 너를 마음에 안 들어서가 아니라, 너를 더 잘 알고 더 잘 맞는 우리가 되기 위해 노력하는 거라고 생각해줘.<br><br>
+검머외가 이렇게 한글로 마음을 표현하려니까 많이 어색하네.<br><br>
+앞으로도 오래 오오오오래 잘 부탁해!<br><br>
 
-	timeElapse(together);
-	setInterval(function () {
-		timeElapse(together);
-	}, 500);
+사랑해
+진짜 많이 
+</p>
 
-	adjustCodePosition();
-	$("#code").typewriter();
-}
-</script>
+
+		
+	</p>
+    <img id="photo" src="image.jpg" alt="Our Photo">
+  </div>
+  <canvas id="hearts"></canvas>
+  <script>
+    // heart animation
+    const canvas = document.getElementById('hearts');
+    const ctx = canvas.getContext('2d');
+    let hearts = [];
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function Heart() {
+      this.x = Math.random() * canvas.width;
+      this.y = canvas.height + Math.random() * 100;
+      this.size = Math.random() * 20 + 10;
+      this.speed = Math.random() * 1 + 0.5;
+      this.opacity = Math.random() * 0.5 + 0.5;
+    }
+    Heart.prototype.update = function() {
+      this.y -= this.speed;
+      if (this.y < -this.size) {
+        this.y = canvas.height + Math.random() * 100;
+        this.x = Math.random() * canvas.width;
+      }
+    }
+    Heart.prototype.draw = function() {
+      ctx.beginPath();
+      ctx.moveTo(this.x, this.y);
+      ctx.bezierCurveTo(this.x + this.size / 2, this.y - this.size,
+                       this.x + this.size * 1.5, this.y + this.size / 3,
+                       this.x, this.y + this.size);
+      ctx.bezierCurveTo(this.x - this.size * 1.5, this.y + this.size / 3,
+                       this.x - this.size / 2, this.y - this.size,
+                       this.x, this.y);
+      ctx.fillStyle = `rgba(255, 105, 180, ${this.opacity})`;
+      ctx.fill();
+    }
+    for (let i = 0; i < 50; i++) {
+      hearts.push(new Heart());
+    }
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      hearts.forEach(h => {
+        h.update();
+        h.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    function doYouLoveMe() {
+      playMusic();
+      showReaction("나도 😂", () => {
+        showReaction("but jokes aside", () => {
+          setTimeout(() => {
+            const card = document.getElementById("card");
+            const message = document.getElementById("message");
+            const photo = document.getElementById("photo");
+            card.classList.add("expanded");  // expand the card
+            message.style.opacity = 1;
+            photo.style.opacity = 1;
+          }, 2000); // pause 2 seconds before fade-in
+        });
+      });
+    }
+
+    function showReaction(text, callback) {
+      const reactionDiv = document.getElementById("reaction");
+      reactionDiv.style.display = "block";
+      reactionDiv.textContent = "";
+      let index = 0;
+      const typing = setInterval(() => {
+        reactionDiv.textContent += text[index];
+        index++;
+        if (index >= text.length) {
+          clearInterval(typing);
+          setTimeout(() => {
+            reactionDiv.style.display = "none";
+            if (callback) callback();
+          }, 4000); // show reaction for 4 seconds
+        }
+      }, 100); // typing speed
+    }
+
+    function playMusic() {
+      const music = document.getElementById("bgmusic");
+      music.play();
+    }
+  </script>
 </body>
 </html>
