@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chef’s Menu — For Yunsu</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#faf7f2;
+      --ink:#1f1d1b;
+      --muted:#6b6560;
+      --accent:#b08968;
+      --accent-2:#d4a373;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 800px at 80% -10%, #fff6ea 0%, transparent 55%),
+                  radial-gradient(1000px 700px at -20% 120%, #f4efe8 0%, transparent 55%),
+                  var(--bg);
+      color:var(--ink);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height:1.6;
+    }
+    .hero{
+      max-width:1100px;margin:0 auto;padding:48px 20px 24px;
+      display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit;
+    }
+    .brand-mark{
+      width:42px;height:42px;border-radius:10px;
+      background: conic-gradient(from 210deg, var(--accent), var(--accent-2));
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    .brand-name{
+      font-family:"Playfair Display", serif;
+      font-size:28px;letter-spacing:.5px;
+    }
+    .sub{color:var(--muted);font-size:14px;margin-top:2px}
+    .nav{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      appearance:none;border:1px solid rgba(0,0,0,0.08);background:#fff;
+      padding:.55rem .9rem;border-radius:999px;cursor:pointer;
+      transition:transform .15s ease, box-shadow .2s ease, background .3s ease;
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+      font-weight:600;font-size:.95rem
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(0,0,0,.1)}
+    .btn.primary{background:linear-gradient(180deg, #fff, #fff8f0);border-color:rgba(0,0,0,.08)}
+    .btn.link{background:transparent;border:none;box-shadow:none;padding:.5rem .2rem}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.08),transparent)}
+    .intro{max-width:1100px;margin:0 auto;padding:36px 20px 10px}
+    .intro h1{
+      font-family:"Playfair Display", serif;
+      font-weight:700;font-size:44px;line-height:1.2;margin:0 0 10px;
+      letter-spacing:.2px
+    }
+    .grid{
+      max-width:1100px;margin:26px auto 80px;padding:0 20px;
+      display:grid;grid-template-columns:repeat(12,1fr);gap:18px
+    }
+    .card{
+      grid-column:span 6;background:var(--card);border-radius:24px;padding:22px;
+      box-shadow:0 12px 36px rgba(0,0,0,.08), 0 2px 0 rgba(0,0,0,.04) inset;
+      border:1px solid rgba(0,0,0,.06);
+      backdrop-filter: blur(4px);
+    }
+    @media (max-width:900px){ .card{grid-column:span 12} }
+    .card h2{
+      font-family:"Playfair Display", serif;font-size:22px;margin:0 0 6px;color:#1c1a18
+    }
+    .desc{color:var(--muted);font-size:.95rem;margin:0 0 12px}
+    .item{
+      display:flex;align-items:flex-start;justify-content:space-between;gap:18px;
+      padding:12px 0;border-top:1px dashed rgba(0,0,0,.08)
+    }
+    .item:first-of-type{border-top:none}
+    .item .left{max-width:85%}
+    .item .name{font-weight:600}
+    .item .note{font-size:.92rem;color:var(--muted)}
+    .price{font-family:"Playfair Display", serif;font-weight:700;color:var(--accent)}
+    footer{
+      max-width:1100px;margin:0 auto 40px;padding:0 20px;color:var(--muted);
+      display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap
+    }
+    .back{color:inherit;text-decoration:none;border-bottom:1px solid rgba(0,0,0,.15)}
+  </style>
+</head>
+<body>
+  <header class="hero" role="banner">
+    <a class="brand" href="menu.html">
+      <div class="brand-mark" aria-hidden="true"></div>
+      <div>
+        <div class="brand-name">Table for 아픈 윤수</div>
+        <div class="sub">A home-cooked tasting menu</div>
+      </div>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="btn link" href="index.html">← Back to Letter</a>
+      <button class="btn primary" onclick="window.print()">Print Menu</button>
+    </nav>
+  </header>
+
+  <div class="divider"></div>
+
+  <section class="intro">
+    <h1>Chef’s Menu</h1>
+  </section>
+
+  <main class="grid">
+    <!-- Entrees -->
+    <section class="card" aria-labelledby="entrees">
+      <h2 id="entrees">Entrees</h2>
+      <p class="desc">Signature Korean stews and comfort classics.</p>
+
+      <div class="item"><div class="left"><div class="name">김치찌개</div><div class="note">A hearty kimchi stew simmered with pork, tofu, and bold spices.</div></div></div>
+      <div class="item"><div class="left"><div class="name">된장찌개</div><div class="note">Traditional soybean paste stew with vegetables and rich umami depth.</div></div></div>
+      <div class="item"><div class="left"><div class="name">미역국</div><div class="note">Delicate seaweed soup, light yet nourishing, a Korean classic.</div></div></div>
+      <div class="item"><div class="left"><div class="name">소고기무국</div><div class="note">Clear beef and radish soup, savory and refreshingly light.</div></div></div>
+      <div class="item"><div class="left"><div class="name">떡볶이 (밀키트)</div><div class="note">Spicy-sweet rice cakes in a gochujang sauce, made from a meal kit.</div></div></div>
+      <div class="item"><div class="left"><div class="name">부대찌개</div><div class="note">Army base stew — kimchi, sausage, spam, and noodles in rich broth.</div></div></div>
+      <div class="item"><div class="left"><div class="name">닭볶음탕</div><div class="note">Braised chicken in a spicy red pepper sauce with vegetables.</div></div></div>
+      <div class="item"><div class="left"><div class="name">오뎅탕</div><div class="note">Fishcake soup with a savory broth, warming and comforting.</div></div></div>
+    </section>
+
+    <!-- Sides -->
+    <section class="card" aria-labelledby="sides">
+      <h2 id="sides">Sides</h2>
+      <p class="desc">Simple accompaniments prepared with care.</p>
+
+      <div class="item"><div class="left"><div class="name">스팸구이</div><div class="note">Pan-seared spam slices, lightly crisped for a savory bite.</div></div></div>
+      <div class="item"><div class="left"><div class="name">계란후라이</div><div class="note">Perfectly fried eggs, golden edges with a soft center.</div></div></div>
+      <div class="item"><div class="left"><div class="name">감자채볶음</div><div class="note">Stir-fried julienned potatoes, tender yet slightly crisp.</div></div></div>
+    </section>
+
+    <!-- Drinks -->
+    <section class="card" aria-labelledby="drinks">
+      <h2 id="drinks">Drinks</h2>
+      <p class="desc">Thoughtfully chosen refreshments.</p>
+      <div class="item"><div class="left"><div class="name">Whiskey</div><div class="note">Neat pour of smooth whiskey, warm and refined.</div></div></div>
+      <div class="item"><div class="left"><div class="name">Lemon Tea</div><div class="note">Refreshing tea infused with fresh lemon, served hot or chilled.</div></div></div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="back" href="index.html">← Back to Letter</a>
+  </footer>
+</body>
+</html>

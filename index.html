@@ -70,9 +70,27 @@
       margin-top: 1rem;
       white-space: pre-wrap;
     }
+    .menu-link {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      color: #222;
+      text-decoration: none;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transition: transform .15s ease, box-shadow .2s ease;
+      z-index: 10;
+    }
+  .menu-link:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,0.12); }
   </style>
 </head>
 <body>
+  <a class="menu-link" href="menu.html" aria-label="Chef's Menu">Chef’s Menu</a>
   <audio id="bgmusic" loop>
     <source src="music.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
